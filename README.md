@@ -1,4 +1,4 @@
-bannalia
+Bannalia: trivial notes on themes diverse
 ========
 
-bannalia
+Files attached to entries in [bannalia.blogspot.com](http://bannalia.blogspot.com/)
