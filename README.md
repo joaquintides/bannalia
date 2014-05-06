@@ -1,4 +1,4 @@
-bannalia
-========
+Bannalia: trivial notes on themes diverse
+--------
 
-bannalia
+Source code and auxiliary stuff from [bannalia.blogspot.com](http://bannalia.blogspot.com/).
