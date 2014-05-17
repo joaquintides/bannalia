@@ -231,7 +231,7 @@ profile breed(const profile& a,const profile& b,URNG& g)
     a.begin()+cut1,a.begin()+cut2,
     b.begin()+cut1,c.begin()+cut1,
     [&](quantity<length> y1,quantity<length> y2){
-      auto y=y1*double(n)/double(dc)+y2*double(dc-n)/double(dc);
+      auto y=y1*double(dc-n)/double(dc)+y2*double(n)/double(dc);
       if(mut(g)<mutation_rate)y*=change(g);
       ++n;
       return y;
