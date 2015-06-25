@@ -57,7 +57,7 @@ void resume_timing()
 #include <iostream>
 
 template<typename T>
-class preorder_vector
+class levelorder_vector
 {
   typedef std::vector<T> vector;
   
@@ -70,12 +70,12 @@ public:
   typedef typename vector::difference_type        difference_type;
   typedef typename vector::size_type              size_type;
   
-  preorder_vector(){}
-  preorder_vector(const preorder_vector& x):impl(x.impl){}
-  preorder_vector& operator=(const preorder_vector& x){impl=x.impl;return *this;}
+  levelorder_vector(){}
+  levelorder_vector(const levelorder_vector& x):impl(x.impl){}
+  levelorder_vector& operator=(const levelorder_vector& x){impl=x.impl;return *this;}
   
   template<typename InputIterator>
-  preorder_vector(InputIterator first,InputIterator last)
+  levelorder_vector(InputIterator first,InputIterator last)
   {
     vector aux(first,last);
     std::sort(aux.begin(),aux.end());
@@ -87,12 +87,12 @@ public:
   const_iterator end()const{return impl.end();}
   const_iterator cbegin()const{return impl.cbegin();}
   const_iterator cend()const{return impl.cend();}
-  friend bool    operator==(const preorder_vector& x,const preorder_vector& y)
+  friend bool    operator==(const levelorder_vector& x,const levelorder_vector& y)
                    {return x.impl==y.impl;}
-  friend bool    operator!=(const preorder_vector& x,const preorder_vector& y)
+  friend bool    operator!=(const levelorder_vector& x,const levelorder_vector& y)
                    {return x.impl!=y.impl;}
-  void           swap(preorder_vector& x){impl.swap(x.impl);}
-  friend void    swap(preorder_vector& x,preorder_vector& y){x.swap(y);}
+  void           swap(levelorder_vector& x){impl.swap(x.impl);}
+  friend void    swap(levelorder_vector& x,levelorder_vector& y){x.swap(y);}
   size_type      size()const{return impl.size();}
   size_type      max_size()const{return impl.max_size();}
   bool           empty()const{return impl.empty();}
@@ -216,7 +216,7 @@ int main()
 {
   typedef std::set<unsigned int>                   container_t1;
   typedef boost::container::flat_set<unsigned int> container_t2;
-  typedef preorder_vector<unsigned int>            container_t3;
+  typedef levelorder_vector<unsigned int>          container_t3;
  
   test<
     binary_search,
@@ -227,6 +227,6 @@ int main()
     "Binary search",
     "std::set",
     "boost::container::flat_set",
-    "preorder_vector"
+    "levelorder_vector"
   );
  }
