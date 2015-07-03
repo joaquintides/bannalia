@@ -262,7 +262,7 @@ int main()
     container_t2,
     container_t3>
   (
-    "Binary search",
+    "Traverse",
     "std::set",
     "boost::container::flat_set",
     "levelorder_vector"
